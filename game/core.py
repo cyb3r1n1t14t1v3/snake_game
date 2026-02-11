@@ -20,44 +20,7 @@ class Snake:
         ]
         self.direction = "right"
         self.field = field
-        self.is_auto_mode = True
-
-    # def auto_mode(self):
-    #     head = self.body[0].copy()
-    #
-    #     directions = [
-    #         {"dir" : "right", "x" : head["x"], "y" : head["y"] + 1},
-    #         {"dir" : "left", "x" : head["x"], "y" : head["y"] - 1},
-    #         {"dir" : "up", "x" : head["x"], "y" : head["y"] + 1},
-    #         {"dir" : "down", "x" : head["x"], "y" : head["y"] - 1},
-    #     ]
-    #
-    #     print(directions)
-    #
-    #     valid_directions = [
-    #         d for d in directions if
-    #         self.field.rows > d["x"] >= 0 and
-    #         self.field.columns > d["y"] >= 0 and
-    #         not any(map(lambda cell: cell["x"] == d["x"] and cell["y"] == d["y"], self.body[1:]))
-    #     ]
-    #
-    #     print(valid_directions)
-    #
-    #     food_directions = [
-    #         d for d in valid_directions if
-    #         (d["dir"] == "right" and self.field.food["x"] > head["x"]) or
-    #         (d["dir"] == "left" and self.field.food["x"] < head["x"]) or
-    #         (d["dir"] == "up" and self.field.food["y"] > head["y"]) or
-    #         (d["dir"] == "down" and self.field.food["y"] < head["y"])
-    #     ]
-    #
-    #     print(food_directions)
-    #
-    #     if len(food_directions) > 0:
-    #         self.direction = food_directions[0]["dir"]
-    #     elif len(valid_directions) > 0:
-    #         self.direction = valid_directions[0]["dir"]
-
+        
 class Field:
     def __init__(self, rows, columns):
         self.core = Core()
